@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloomé — Tratamento capilar manipulado | Therapeutica Pharmacia</title>
+<meta name="description" content="Bloomé é um tratamento capilar manipulado com ativos naturais estudados por atuarem no ciclo de crescimento do fio. Fórmula personalizável, com acompanhamento de farmacêutica. Fale pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --creme:#EFECE5;
+  --creme-2:#F6F3EC;
+  --branco:#FBFAF7;
+  --verde:#516925;
+  --verde-musgo:#5D6E3E;
+  --verde-claro:#8BA05E;
+  --coral:#EC643F;
+  --coral-esc:#D6512E;
+  --ambar:#F5B751;
+  --grafite:#3A3A38;
+  --cinza:#6E6B64;
+  --wa:#25D366;
+  --shadow-soft:0 18px 50px -22px rgba(80,60,30,.35);
+  --radius:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Montserrat',system-ui,sans-serif;
+  background:var(--creme);
+  color:var(--grafite);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.serif{font-family:'Fraunces',Georgia,serif;font-optical-sizing:auto}
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+.eyebrow{
+  font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--coral);display:inline-block;
+}
+.eyebrow.verde{color:var(--verde-musgo)}
+h2.title{
+  font-family:'Fraunces',serif;font-weight:400;
+  font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.05;color:var(--verde);
+  letter-spacing:-.01em;margin:.35em 0 .5em;
+}
+p.lead{font-size:clamp(1rem,1.5vw,1.15rem);color:var(--cinza);max-width:56ch}
+
+/* ---------- BOTÕES ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-weight:600;font-size:1rem;letter-spacing:.01em;
+  padding:1.05em 1.9em;border-radius:999px;cursor:pointer;border:none;
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s;
+  will-change:transform;
+}
+.btn-wa{
+  background:var(--coral);color:#fff;
+  box-shadow:0 14px 30px -10px rgba(236,100,63,.6);
+}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 20px 40px -10px rgba(236,100,63,.7);background:var(--coral-esc)}
+.btn-wa svg{width:1.2em;height:1.2em;fill:currentColor}
+.btn-ghost{background:transparent;color:var(--verde);border:1.5px solid rgba(81,105,37,.3)}
+.btn-ghost:hover{background:rgba(81,105,37,.06);transform:translateY(-2px)}
+
+/* ---------- HEADER ---------- */
+header.nav{
+  position:sticky;top:0;z-index:60;
+  backdrop-filter:blur(12px) saturate(1.3);
+  background:rgba(239,236,229,.72);
+  border-bottom:1px solid rgba(81,105,37,.08);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.7rem 0}
+.nav-logo{height:38px;width:auto}
+.nav-menu{display:flex;gap:1.8rem;margin-left:auto;margin-right:.5rem}
+.nav-menu a{font-size:.92rem;font-weight:500;color:var(--verde);position:relative;padding:.2em 0;transition:color .2s;white-space:nowrap}
+.nav-menu a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--coral);transition:width .25s}
+.nav-menu a:hover{color:var(--coral)}.nav-menu a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:.7rem}
+.nav-cta{font-size:.9rem;padding:.7em 1.3em}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:9px;z-index:80}
+.nav-burger span{display:block;height:2px;width:100%;background:var(--verde);border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-overlay{position:fixed;inset:0;background:rgba(40,45,25,.4);opacity:0;visibility:hidden;transition:opacity .3s;z-index:65}
+.nav-overlay.open{opacity:1;visibility:visible}
+@media(max-width:880px){
+  .nav-menu{position:fixed;inset:0 0 0 auto;width:min(78vw,300px);flex-direction:column;gap:0;
+    padding:5.5rem 1.6rem 2rem;margin:0;background:var(--creme-2);
+    box-shadow:-20px 0 60px -20px rgba(0,0,0,.3);transform:translateX(100%);
+    transition:transform .35s cubic-bezier(.2,.8,.2,1);z-index:70}
+  .nav-menu.open{transform:none}
+  .nav-menu a{padding:1rem 0;border-bottom:1px solid rgba(81,105,37,.12);font-size:1.05rem;width:100%}
+  .nav-menu a::after{display:none}
+  .nav-burger{display:flex}
+  .nav-cta .lbl{display:none}
+}
+section[id]{scroll-margin-top:78px}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;overflow:hidden;padding:clamp(2.5rem,6vw,5rem) 0 clamp(3rem,6vw,5.5rem)}
+#dotfield{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.hero-copy h1{
+  font-family:'Fraunces',serif;font-weight:340;
+  font-size:clamp(2.5rem,5.6vw,4.4rem);line-height:1.02;letter-spacing:-.015em;
+  color:var(--verde);margin:.45em 0 .5em;
+}
+.hero-copy h1 em{font-style:italic;color:var(--coral);font-weight:360}
+.hero-copy p{font-size:clamp(1.02rem,1.5vw,1.18rem);color:var(--cinza);max-width:46ch;margin-bottom:1.8em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.hero-micro{font-size:.82rem;color:var(--cinza);margin-top:1.2em;display:flex;align-items:center;gap:.5em}
+.hero-micro::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--verde-claro);box-shadow:0 0 0 4px rgba(139,160,94,.25)}
+.hero-visual{position:relative}
+.hero-visual .photo{
+  border-radius:26px;box-shadow:var(--shadow-soft);aspect-ratio:4/5;object-fit:cover;object-position:center 54%;width:100%;
+}
+/* liquid glass badge sobre a foto */
+.glass-badge{
+  position:absolute;left:-6%;bottom:8%;z-index:3;
+  padding:1.05rem 1.35rem;border-radius:18px;
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(16px) saturate(1.6);
+  -webkit-backdrop-filter:blur(16px) saturate(1.6);
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 12px 30px -12px rgba(80,60,30,.4);
+  max-width:210px;
+}
+.glass-badge .n{font-family:'Fraunces',serif;font-size:2rem;color:var(--coral);line-height:1;font-weight:500}
+.glass-badge .t{font-size:.78rem;color:var(--grafite);margin-top:.25em;font-weight:500}
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero-visual{max-width:420px;margin-inline:auto;width:100%}
+  .glass-badge{left:auto;right:4%}
+}
+
+/* ---------- FAIXA CREDIBILIDADE ---------- */
+.trust{background:var(--verde);color:#EDEAE0}
+.trust-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;padding:1.15rem 0}
+.trust-item{display:flex;align-items:center;gap:.6em;font-size:.86rem;font-weight:500;letter-spacing:.02em;flex:1 1 200px}
+.trust-item svg{width:1.25em;height:1.25em;flex-shrink:0;stroke:var(--ambar);fill:none;stroke-width:1.8}
+
+/* ---------- SEÇÕES BASE ---------- */
+section{padding:clamp(3.5rem,7vw,6rem) 0}
+.sec-head{max-width:60ch}
+
+/* ---------- DOR ---------- */
+.pain{background:var(--creme-2)}
+.pain-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.1rem;margin-top:2.2rem}
+.pain-card{
+  position:relative;overflow:hidden;
+  background:var(--branco);border-radius:16px;padding:1.7rem 1.5rem;
+  border:1px solid rgba(81,105,37,.09);box-shadow:0 8px 24px -18px rgba(80,60,30,.4);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
+}
+.pain-card .mark{display:block;width:26px;height:3px;border-radius:2px;background:var(--coral);margin-bottom:1.1rem;transition:width .35s cubic-bezier(.2,.8,.2,1)}
+.pain-card::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:100%;
+  background:linear-gradient(90deg,var(--coral),var(--ambar));
+  transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.pain-card:hover{transform:translateY(-7px);box-shadow:0 20px 44px -20px rgba(80,60,30,.45)}
+.pain-card:hover::after{transform:scaleX(1)}
+.pain-card:hover .mark{width:46px}
+.pain-card h3{font-size:1rem;font-weight:600;color:var(--verde);margin-bottom:.35em}
+.pain-card p{font-size:.92rem;color:var(--cinza)}
+.pain-note{margin-top:2rem;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.15rem,2vw,1.5rem);color:var(--verde-musgo);max-width:40ch}
+
+/* ---------- MECANISMO ---------- */
+.mech-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.mech-visual img{border-radius:22px;box-shadow:var(--shadow-soft);aspect-ratio:1/1;object-fit:cover;width:100%}
+.mech-steps{display:flex;flex-direction:column;gap:1.4rem;margin-top:1.8rem}
+.mech-step{display:flex;gap:1rem;align-items:flex-start}
+.mech-step .dot{
+  flex-shrink:0;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(245,183,81,.18);color:var(--verde);font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;
+  border:1px solid rgba(245,183,81,.4);
+}
+.mech-step h3{font-size:1.02rem;font-weight:600;color:var(--verde);margin-bottom:.2em}
+.mech-step p{font-size:.93rem;color:var(--cinza)}
+@media(max-width:860px){.mech-grid{grid-template-columns:1fr}.mech-visual{max-width:400px;margin-inline:auto}}
+
+/* ---------- BENEFÍCIOS (LIQUID GLASS) ---------- */
+.benefits{position:relative;background:
+   radial-gradient(120% 90% at 85% 0%,rgba(245,183,81,.22),transparent 55%),
+   radial-gradient(100% 80% at 0% 100%,rgba(139,160,94,.22),transparent 55%),
+   var(--creme);
+}
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
+@media(max-width:860px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.benefit-grid{grid-template-columns:1fr}}
+.glass{
+  position:relative;border-radius:var(--radius);padding:1.7rem 1.6rem;overflow:hidden;
+  background:rgba(255,255,255,.22);
+  backdrop-filter:blur(18px) saturate(1.7);
+  -webkit-backdrop-filter:blur(18px) saturate(1.7);
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 16px 40px -22px rgba(80,60,30,.5);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.glass::after{ /* specular sweep */
+  content:"";position:absolute;top:-60%;left:-30%;width:70%;height:220%;
+  background:linear-gradient(115deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:rotate(8deg);opacity:.5;pointer-events:none;
+}
+.glass:hover{transform:translateY(-6px)}
+.glass .g-ic{width:44px;height:44px;margin-bottom:1rem;display:grid;place-items:center;border-radius:12px;background:rgba(236,100,63,.12)}
+.glass .g-ic svg{width:24px;height:24px;stroke:var(--coral);fill:none;stroke-width:1.7}
+.glass h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.25rem;color:var(--verde);margin-bottom:.35em}
+.glass p{font-size:.92rem;color:#514f49}
+
+/* ---------- RITUAL / 21 DIAS ---------- */
+.ritual{background:var(--verde);color:#EFEBE0;overflow:hidden}
+.ritual-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4.5rem);align-items:center}
+.ritual-grid img{border-radius:22px;aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+.ritual .eyebrow{color:var(--ambar)}
+.ritual h2{font-family:'Fraunces',serif;font-weight:340;font-size:clamp(2rem,4vw,3.1rem);line-height:1.05;margin:.35em 0 .6em;color:#fff}
+.ritual h2 span{color:var(--ambar);font-style:italic}
+.ritual p{color:rgba(239,235,224,.82);max-width:46ch;margin-bottom:1.5rem}
+.ritual .big21{font-family:'Fraunces',serif;font-size:clamp(3.4rem,7vw,5rem);color:var(--ambar);line-height:.9;font-weight:500}
+.ritual .big21 small{display:block;font-family:'Montserrat';font-size:.9rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,235,224,.7);margin-top:.5em}
+@media(max-width:860px){.ritual-grid{grid-template-columns:1fr}.ritual-grid .r-photo{max-width:380px;margin-inline:auto;order:-1}}
+
+/* ---------- PROVA (PLACEHOLDER) ---------- */
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.2rem;margin-top:2.5rem}
+.testi{background:var(--branco);border-radius:18px;padding:1.7rem;border:1px solid rgba(81,105,37,.1);position:relative}
+.testi .stars{color:var(--ambar);letter-spacing:.15em;font-size:1rem;margin-bottom:.8rem}
+.testi p{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--grafite);margin-bottom:1.2rem;line-height:1.5}
+.testi .who{display:flex;align-items:center;gap:.7rem}
+.testi .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--verde-claro),var(--ambar));flex-shrink:0}
+.testi .who b{font-size:.9rem;font-weight:600;color:var(--verde);display:block}
+.testi .who span{font-size:.78rem;color:var(--cinza)}
+.ph-flag{
+  display:inline-block;margin-top:1.5rem;font-size:.75rem;color:var(--coral-esc);
+  background:rgba(236,100,63,.1);padding:.5em 1em;border-radius:8px;border:1px dashed rgba(236,100,63,.4);
+}
+
+/* ---------- OFERTA ---------- */
+.offer{background:var(--creme-2)}
+.offer-box{
+  background:var(--branco);border-radius:28px;padding:clamp(2rem,4vw,3.5rem);
+  box-shadow:var(--shadow-soft);border:1px solid rgba(81,105,37,.08);
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem);align-items:center;
+}
+.offer-box .steps{display:flex;flex-direction:column;gap:1.1rem}
+.offer-step{display:flex;gap:.9rem;align-items:flex-start}
+.offer-step b{
+  flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--verde);color:#fff;
+  display:grid;place-items:center;font-size:.85rem;font-weight:600;
+}
+.offer-step p{font-size:.95rem;color:var(--cinza)}
+.offer-step p strong{color:var(--verde);font-weight:600}
+.offer-cta h3{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.5rem,3vw,2.1rem);color:var(--verde);line-height:1.1;margin-bottom:.5em}
+.offer-cta p{font-size:.95rem;color:var(--cinza);margin-bottom:1.5rem}
+.offer-cta .btn{width:100%;justify-content:center}
+.guar{margin-top:1rem;font-size:.8rem;color:var(--cinza);text-align:center}
+@media(max-width:760px){.offer-box{grid-template-columns:1fr}}
+
+/* ---------- FAQ ---------- */
+.faq-list{max-width:800px;margin:2.5rem auto 0}
+.faq-item{border-bottom:1px solid rgba(81,105,37,.15)}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;
+  padding:1.35rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  font-family:'Montserrat';font-size:1.05rem;font-weight:600;color:var(--verde);}
+.faq-q .chev{transition:transform .3s;flex-shrink:0;color:var(--coral);font-size:1.3rem;line-height:1}
+.faq-item[open] .chev{transform:rotate(45deg)}
+.faq-a{padding:0 0 1.4rem;color:var(--cinza);font-size:.96rem;max-width:70ch}
+details summary{list-style:none}
+details summary::-webkit-details-marker{display:none}
+
+/* ---------- CTA FINAL ---------- */
+.final{position:relative;text-align:center;overflow:hidden;
+  background:radial-gradient(120% 120% at 50% 0%,rgba(245,183,81,.2),transparent 60%),var(--creme)}
+.final h2{font-family:'Fraunces',serif;font-weight:340;font-size:clamp(2.1rem,5vw,3.6rem);color:var(--verde);line-height:1.05;margin-bottom:.4em}
+.final h2 em{font-style:italic;color:var(--coral)}
+.final p{color:var(--cinza);max-width:48ch;margin:0 auto 2rem;font-size:1.08rem}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--verde);color:rgba(239,235,224,.8);padding:2.8rem 0 4.5rem}
+.foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:2.5rem;align-items:start}
+footer .flogo{filter:brightness(0) invert(1);opacity:.92;height:42px;margin-bottom:.9rem}
+footer h4{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ambar);margin-bottom:1rem;font-weight:600}
+footer a,footer p{font-size:.88rem;color:rgba(239,235,224,.78);margin-bottom:.45rem;transition:color .2s}
+footer a:hover{color:#fff}
+.foot-social{display:inline-flex;align-items:center;gap:.5em}
+.foot-social svg{width:1.15em;height:1.15em;fill:currentColor;vertical-align:middle}
+.foot-legal{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.13)}
+.foot-rt{font-size:.85rem;color:rgba(239,235,224,.88);margin-bottom:1rem;letter-spacing:.01em}
+.foot-rt span{color:var(--ambar);font-weight:600;letter-spacing:.05em;text-transform:uppercase;font-size:.74rem;margin-right:.5em}
+.compliance{font-size:.76rem;color:rgba(239,235,224,.6);line-height:1.7;max-width:none}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:2rem}}
+
+/* ---------- WHATSAPP FLUTUANTE ---------- */
+.wa-float{
+  position:fixed;right:20px;bottom:20px;z-index:90;
+  display:flex;align-items:center;gap:.65em;
+  background:var(--wa);color:#fff;font-weight:600;font-size:.95rem;
+  padding:.9em 1.3em;border-radius:999px;
+  box-shadow:0 12px 30px -8px rgba(37,211,102,.6);
+  transition:transform .25s,box-shadow .25s;
+}
+.wa-float:hover{transform:scale(1.05)}
+.wa-float svg{width:1.4em;height:1.4em;fill:currentColor}
+@media(max-width:560px){.wa-float .lbl{display:none}.wa-float{padding:.95em;right:16px;bottom:16px}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <img class="nav-logo" src="assets/logo-horizontal.png" alt="Therapeutica Pharmacia">
+    <nav class="nav-menu" id="navMenu">
+      <a href="#sinais">Sinais</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-wa nav-cta" href="https://wa.me/556692395488?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Bloom%C3%A9!" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+        <span class="lbl">Falar com a farmacêutica</span>
+      </a>
+      <button class="nav-burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <canvas id="dotfield"></canvas>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Tratamento capilar manipulado</span>
+      <h1>Seu cabelo pode <em>florescer</em> de novo.</h1>
+      <p>Bloomé é um tratamento manipulado com ativos naturais estudados por atuarem no ciclo de crescimento do fio. Formulado para o seu caso, com o acompanhamento de uma farmacêutica.</p>
+      <div class="hero-actions">
+        <a class="btn btn-wa" href="https://wa.me/556692395488?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Bloom%C3%A9!" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+          Falar com a farmacêutica
+        </a>
+      </div>
+      <div class="hero-micro">Atendimento pelo WhatsApp · avaliação sem compromisso</div>
+    </div>
+    <div class="hero-visual">
+      <img class="photo" src="assets/hero.webp" alt="Frasco do Bloomé sobre quartzo rosa e calêndula" fetchpriority="high">
+      <div class="glass-badge">
+        <div class="n">21 dias</div>
+        <div class="t">é a proposta de uso da linha para os primeiros sinais</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAIXA CREDIBILIDADE ===== -->
+<div class="trust">
+  <div class="wrap trust-in">
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7l7-4z"/></svg>Farmácia de manipulação</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 21c-4-3-7-6-7-10a5 5 0 019-3 5 5 0 019 3c0 4-3 7-7 10z" transform="scale(1)"/><path d="M12 8c0 4 0 8 0 8"/></svg>Ativos naturais</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Fórmula personalizável</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 100 8 4 4 0 000-8zM5 21c0-4 3-6 7-6s7 2 7 6"/></svg>Acompanhamento farmacêutico</div>
+  </div>
+</div>
+
+<!-- ===== DOR ===== -->
+<section class="pain" id="sinais">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Você reconhece?</span>
+      <h2 class="title">O afinamento não avisa. Ele se instala.</h2>
+      <p class="lead">Começa discreto, some no espelho por um tempo — até o dia em que o rabo de cavalo já não é o mesmo.</p>
+    </div>
+    <div class="pain-list">
+      <div class="pain-card reveal"><span class="mark"></span><h3>Menos volume</h3><p>O cabelo perde corpo e a raiz não sustenta como antes.</p></div>
+      <div class="pain-card reveal"><span class="mark"></span><h3>Fio mais fino</h3><p>Cada mecha parece mais rala, mesmo sem cair aos punhados.</p></div>
+      <div class="pain-card reveal"><span class="mark"></span><h3>A parte que abre</h3><p>O couro aparece mais na risca e nas laterais.</p></div>
+      <div class="pain-card reveal"><span class="mark"></span><h3>Depois do ciclo</h3><p>Pós-parto, estresse ou fase hormonal aceleram a queda.</p></div>
+    </div>
+    <p class="pain-note reveal">Não é falta de cuidado. É o fio entrando em queda antes da hora — e isso tem como ser tratado.</p>
+  </div>
+</section>
+
+<!-- ===== MECANISMO ===== -->
+<section class="mech" id="como-funciona">
+  <div class="wrap mech-grid">
+    <div class="mech-visual reveal"><img src="assets/resultado.webp" alt="Mulher de cabelos longos e saudáveis segurando o Bloomé"></div>
+    <div class="mech-copy reveal">
+      <span class="eyebrow verde">O que muda com o Bloomé</span>
+      <h2 class="title">Natural, mas com endereço certo: a raiz.</h2>
+      <p class="lead">A fórmula reúne ativos naturais — como <em>Cudrania tricuspidata</em> e <em>Sargassum fusiforme</em> — estudados por atuarem nos sinais que prolongam a fase de crescimento do fio e nutrem o folículo.</p>
+      <div class="mech-steps">
+        <div class="mech-step"><div class="dot">1</div><div><h3>Atua no ciclo do fio</h3><p>Ativos estudados por estimularem a fase de crescimento (anágena) e nutrirem a raiz.</p></div></div>
+        <div class="mech-step"><div class="dot">2</div><div><h3>Manipulado, não industrializado</h3><p>A concentração é pensada para o seu caso — não uma cápsula genérica de prateleira.</p></div></div>
+        <div class="mech-step"><div class="dot">3</div><div><h3>Com farmacêutica junto</h3><p>Quem avalia, ajusta e acompanha é uma profissional, do início ao fim.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFÍCIOS (GLASS) ===== -->
+<section class="benefits" id="beneficios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">O que a linha se propõe a devolver</span>
+      <h2 class="title">Seis sinais de um fio que voltou a crescer.</h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="glass reveal"><div class="g-ic"><svg viewBox="0 0 24 24"><path d="M12 20V6M12 6l-4 4M12 6l4 4"/></svg></div><h3>Mais comprimento</h3><p>Apoio ao crescimento para o fio ganhar tamanho ao longo do uso.</p></div>
+      <div class="glass reveal"><div class="g-ic"><svg viewBox="0 0 24 24"><path d="M4 18c3-8 13-8 16 0M8 18c1-4 7-4 8 0"/></svg></div><h3>Mais densidade</h3><p>Raiz nutrida para devolver corpo e volume à massa capilar.</p></div>
+      <div class="glass reveal"><div class="g-ic"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg></div><h3>Mais brilho</h3><p>Fios mais saudáveis refletem melhor a luz e parecem mais vivos.</p></div>
+      <div class="glass reveal"><div class="g-ic"><svg viewBox="0 0 24 24"><path d="M6 20c0-6 3-10 6-16 3 6 6 10 6 16"/><path d="M6 20h12"/></svg></div><h3>Menos queda</h3><p>Foco em reduzir a perda de fios que caem antes da hora.</p></div>
+      <div class="glass reveal"><div class="g-ic"><svg viewBox="0 0 24 24"><path d="M12 22V8M12 8c0-3 2-5 5-5-1 3-2 5-5 5zM12 12c0-3-2-5-5-5 1 3 2 5 5 5z"/></svg></div><h3>Fio fortalecido</h3><p>Estrutura mais resistente da raiz às pontas.</p></div>
+      <div class="glass reveal"><div class="g-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div><h3>Novos fios</h3><p>Estímulo ao surgimento de fios novos onde o couro rareou.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RITUAL / 21 DIAS ===== -->
+<section class="ritual">
+  <div class="wrap ritual-grid">
+    <div class="reveal">
+      <span class="eyebrow">Um gesto por dia</span>
+      <h2>Cuidar do cabelo pode ser <span>o seu momento.</span></h2>
+      <p>Sem rotina complicada. Um hábito simples, todo dia, enquanto a fórmula trabalha na raiz.</p>
+      <div class="big21">21 dias<small>é a proposta de uso da linha</small></div>
+    </div>
+    <img class="r-photo reveal" src="assets/natureza.webp" alt="Frasco do Bloomé sobre rochas costeiras com flores silvestres">
+  </div>
+</section>
+
+<!-- ===== PROVA (PLACEHOLDER) ===== -->
+<section class="proof">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Quem começou o tratamento</span>
+      <h2 class="title">Histórias de quem voltou a se ver no espelho.</h2>
+    </div>
+    <div class="proof-grid">
+      <div class="testi reveal"><div class="stars">★★★★★</div><p>"[Depoimento real a coletar com a cliente — este é um exemplo de posição e formato.]"</p><div class="who"><div class="av"></div><div><b>Nome da cliente</b><span>Sorriso, MT</span></div></div></div>
+      <div class="testi reveal"><div class="stars">★★★★★</div><p>"[Depoimento real a coletar com a cliente — este é um exemplo de posição e formato.]"</p><div class="who"><div class="av"></div><div><b>Nome da cliente</b><span>Sinop, MT</span></div></div></div>
+      <div class="testi reveal"><div class="stars">★★★★★</div><p>"[Depoimento real a coletar com a cliente — este é um exemplo de posição e formato.]"</p><div class="who"><div class="av"></div><div><b>Nome da cliente</b><span>Lucas do Rio Verde, MT</span></div></div></div>
+    </div>
+    <div style="text-align:center"><span class="ph-flag">⚠ Depoimentos ilustrativos — substituir por relatos reais antes de publicar</span></div>
+  </div>
+</section>
+
+<!-- ===== OFERTA ===== -->
+<section class="offer">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
+      <span class="eyebrow">Como funciona</span>
+      <h2 class="title">Não é um produto de prateleira. É um tratamento pra você.</h2>
+    </div>
+    <div class="offer-box reveal">
+      <div class="steps">
+        <div class="offer-step"><b>1</b><p><strong>Fale com a farmacêutica</strong> pelo WhatsApp e conte o que está acontecendo com seu cabelo.</p></div>
+        <div class="offer-step"><b>2</b><p><strong>Avaliação do seu caso</strong> — tipo de queda, histórico e objetivo.</p></div>
+        <div class="offer-step"><b>3</b><p><strong>Fórmula manipulada</strong> conforme a orientação profissional.</p></div>
+        <div class="offer-step"><b>4</b><p><strong>Acompanhamento</strong> ao longo do uso, para ajustar o que for preciso.</p></div>
+      </div>
+      <div class="offer-cta">
+        <h3>Comece pela conversa. É de graça.</h3>
+        <p>Sem compromisso de compra. A farmacêutica avalia se o Bloomé faz sentido pro seu caso.</p>
+        <a class="btn btn-wa" href="https://wa.me/556692395488?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Bloom%C3%A9!" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+          Falar com a farmacêutica
+        </a>
+        <div class="guar">Atendimento humano · resposta pelo WhatsApp</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="duvidas">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2 class="title">O que costumam perguntar antes.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item"><summary class="faq-q">O Bloomé serve pro meu tipo de queda?<span class="chev">+</span></summary><div class="faq-a">O Bloomé é pensado para quadros de afinamento e queda — incluindo fases como pós-parto, estresse e alterações hormonais. Como cada caso é diferente, quem avalia se ele faz sentido pra você é a farmacêutica, na conversa pelo WhatsApp.</div></details>
+      <details class="faq-item"><summary class="faq-q">É natural? Tem alguma contraindicação?<span class="chev">+</span></summary><div class="faq-a">A base são ativos naturais. Ainda assim, todo tratamento pede avaliação — a farmacêutica verifica seu histórico antes de qualquer orientação. Por isso o primeiro passo é sempre a conversa.</div></details>
+      <details class="faq-item"><summary class="faq-q">Em quanto tempo vejo resultado?<span class="chev">+</span></summary><div class="faq-a">A proposta de uso da linha é de 21 dias para os primeiros sinais, com uso contínuo. O tempo de resposta varia de organismo para organismo — algo que o acompanhamento ajuda a entender no seu caso.</div></details>
+      <details class="faq-item"><summary class="faq-q">Como faço para comprar?<span class="chev">+</span></summary><div class="faq-a">O Bloomé não é vendido como produto de prateleira. O atendimento é feito pela farmacêutica no WhatsApp, que avalia seu caso e orienta a fórmula manipulada.</div></details>
+      <details class="faq-item"><summary class="faq-q">Preciso de receita?<span class="chev">+</span></summary><div class="faq-a">A farmacêutica orienta cada passo, inclusive sobre a necessidade de prescrição conforme o seu caso. É só perguntar na conversa.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="final">
+  <div class="wrap">
+    <h2 class="reveal">Comece pelo <em>primeiro fio.</em></h2>
+    <p class="reveal">Uma conversa com a farmacêutica é o começo do seu tratamento. Sem custo, sem compromisso.</p>
+    <div class="reveal">
+      <a class="btn btn-wa" href="https://wa.me/556692395488?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Bloom%C3%A9!" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+        Falar com a farmacêutica agora
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img class="flogo" src="assets/logo-horizontal.png" alt="Therapeutica Pharmacia">
+        <p>Farmácia de manipulação. Saúde integrativa, magistral e personalizada.</p>
+        <a class="foot-social" href="https://www.instagram.com/therapeuticamt/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1012 18.6 6.6 6.6 0 0012 5.4zm0 10.9a4.3 4.3 0 110-8.6 4.3 4.3 0 010 8.6zm6.8-11.1a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>@therapeuticamt</a>
+      </div>
+      <div>
+        <h4>Unidades</h4>
+        <p>Sorriso · MT</p>
+        <p>Sinop · MT</p>
+        <p>Lucas do Rio Verde · MT</p>
+      </div>
+      <div>
+        <h4>Fale com a gente</h4>
+        <a href="https://wa.me/556692395488?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Bloom%C3%A9!" target="_blank" rel="noopener">WhatsApp da farmacêutica</a><br>
+        <a href="https://www.instagram.com/therapeuticamt/" target="_blank" rel="noopener">Instagram</a><br>
+        <a href="mailto:atendimento@therapeuticafarmacia.com.br">atendimento@therapeuticafarmacia.com.br</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p class="foot-rt"><span>Responsável Técnica</span> Andrea Andreolla Borges &nbsp;·&nbsp; CRF-MT 1088/97</p>
+      <p class="compliance">
+      Bloomé é um composto manipulado, formulado individualmente sob orientação farmacêutica. As informações desta página têm caráter informativo e não substituem a avaliação de um profissional de saúde. O Bloomé não é medicamento e não se propõe a diagnosticar, tratar, curar ou prevenir qualquer doença. Resultados variam conforme o organismo e a adesão ao uso. Consulte sempre a farmacêutica antes de iniciar qualquer tratamento. © 2026 Therapeutica Pharmacia.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLUTUANTE ===== -->
+<a class="wa-float" href="https://wa.me/556692395488?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Bloom%C3%A9!" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+  <span class="lbl">Falar no WhatsApp</span>
+</a>
+
+<script>
+/* ---------- DOT FIELD (signature: pontos que "florescem" ao toque) ---------- */
+(function(){
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canvas = document.getElementById('dotfield');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let dots=[], w=0, h=0, dpr=Math.min(window.devicePixelRatio||1,2);
+  const SPACING=34, R=1.8, INFLU=120;
+  const mouse={x:-9999,y:-9999};
+  const cA={r:245,g:183,b:81};   // âmbar
+  const cB={r:139,g:160,b:94};   // verde claro
+
+  function build(){
+    const rect=canvas.getBoundingClientRect();
+    w=rect.width; h=rect.height;
+    canvas.width=w*dpr; canvas.height=h*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    dots=[];
+    for(let y=SPACING/2; y<h; y+=SPACING){
+      for(let x=SPACING/2; x<w; x+=SPACING){
+        dots.push({x,y,ph:Math.random()*Math.PI*2});
+      }
+    }
+  }
+  function draw(t){
+    ctx.clearRect(0,0,w,h);
+    for(const d of dots){
+      const dx=d.x-mouse.x, dy=d.y-mouse.y;
+      const dist=Math.hypot(dx,dy);
+      let boost=0;
+      if(dist<INFLU) boost=(1-dist/INFLU);
+      const pulse=prefersReduced?0:(Math.sin(t*0.0012+d.ph)*0.12+0.12);
+      const rad=R+boost*3.2+pulse*R;
+      const alpha=0.10+boost*0.55+pulse*0.10;
+      const mix=boost; // âmbar perto do cursor, verde longe
+      const r=Math.round(cB.r+(cA.r-cB.r)*mix);
+      const g=Math.round(cB.g+(cA.g-cB.g)*mix);
+      const b=Math.round(cB.b+(cA.b-cB.b)*mix);
+      ctx.beginPath();
+      ctx.arc(d.x,d.y,rad,0,Math.PI*2);
+      ctx.fillStyle='rgba('+r+','+g+','+b+','+alpha+')';
+      ctx.fill();
+    }
+    raf=requestAnimationFrame(draw);
+  }
+  let raf;
+  const hero=canvas.parentElement;
+  hero.addEventListener('pointermove',e=>{
+    const rect=canvas.getBoundingClientRect();
+    mouse.x=e.clientX-rect.left; mouse.y=e.clientY-rect.top;
+  });
+  hero.addEventListener('pointerleave',()=>{mouse.x=-9999;mouse.y=-9999;});
+  window.addEventListener('resize',build);
+  build();
+  if(prefersReduced){ draw(0); cancelAnimationFrame(raf); }
+  else raf=requestAnimationFrame(draw);
+})();
+
+/* ---------- MENU MOBILE ---------- */
+(function(){
+  var b=document.getElementById('navBurger'),m=document.getElementById('navMenu'),o=document.getElementById('navOverlay');
+  if(!b||!m) return;
+  function close(){m.classList.remove('open');b.classList.remove('open');o.classList.remove('open');b.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  function toggle(){var op=m.classList.toggle('open');b.classList.toggle('open',op);o.classList.toggle('open',op);b.setAttribute('aria-expanded',op);document.body.style.overflow=op?'hidden':'';}
+  b.addEventListener('click',toggle);
+  o.addEventListener('click',close);
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+
+/* ---------- SCROLL REVEAL ---------- */
+(function(){
+  const els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);} });
+  },{threshold:.14});
+  els.forEach(e=>io.observe(e));
+})();
+</script>
+</body>
+</html>
